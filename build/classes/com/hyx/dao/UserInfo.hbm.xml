@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hyx.dao.UserInfo" table="tb_userinfo" catalog="test">
+		<id name="number" type="java.lang.Integer">
+			<column name="number"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="id" type="java.lang.String">
+            <column name="id" length="20" not-null="true">
+                <comment>Log in user account</comment>
+            </column>
+        </property>
+         <property name="name" type="java.lang.String">
+            <column name="name" length="20" not-null="true">
+                <comment>user name</comment>
+            </column>
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="2" not-null="true">
+                <comment>sex</comment>
+            </column>
+        </property>
+        <property name="birthday" type="java.lang.String">
+            <column name="birthday" length="10" not-null="true">
+                <comment>dob</comment>
+            </column>
+        </property>
+        <property name="come" type="java.lang.String">
+            <column name="come" length="10" not-null="true">
+                <comment>Employed date</comment>
+            </column>
+        </property>
+        <property name="pwd" type="java.lang.String">
+            <column name="pwd" length="20" not-null="true">
+                <comment>Log in password</comment>
+            </column>
+        </property>
+        <property name="dept" type="java.lang.Integer">
+            <column name="dept" not-null="true">
+                <comment>department number</comment>
+            </column>
+        </property>
+        <property name="face" type="java.lang.String">
+            <column name="face" length="45" not-null="true">
+                <comment>Profile image</comment>
+            </column>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark" length="100" not-null="true">
+                <comment>Personal information</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

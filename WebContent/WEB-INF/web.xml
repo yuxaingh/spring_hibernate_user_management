@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>userManagerModule</display-name>
+	<!-- spring encoding filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<!-- encoding type-->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>gbk</param-value>
+		</init-param>
+		<!-- Force encoding -->
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<servlet>
+		<!-- Define servlet name -->
+		<servlet-name>dispatcherServlet</servlet-name>
+		<!-- Servlet implementation -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- Initialize context object -->
+		<init-param>
+			<!-- parameter location -->
+			<param-name>contextConfigLocation</param-name>
+			<!-- Load config file -->
+			<param-value>/WEB-INF/applicationContext.xml</param-value>
+		</init-param>
+		<!-- Set up config priority -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- Request mapping -->
+	<servlet-mapping>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>forworld.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

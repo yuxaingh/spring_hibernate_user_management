@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hyx.dao.DeptInfo" table="tb_deptinfo" catalog="test">
+		<id name="number" type="java.lang.Integer">
+			<column name="number"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="45" not-null="true">
+				<comment>Department name</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.lang.String">
+			<column name="createDate" length="10" not-null="true">
+				<comment>Create time</comment>
+			</column>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="45" not-null="true">
+				<comment>Department introduction</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
