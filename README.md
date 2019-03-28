@@ -9,17 +9,18 @@ This is tutorial project of spring mvc and hibernate.
   Used to map request url to actual controller bean
 
 ### Some logic controller:
-  #### AbstractController: nothing special
-  #### ParameerizableViewController: directly return a view without doing anything
-  #### UrlFilenameViewController: do some prefix and suffix to the request name and then return view
-  #### SimpleFormController: has onSubmit(Object command) function, command object contains form parameters. Remember need to configure            commandClass in applicationContext.xml
-  #### MultiActionController: use request parameter "method" to map to different member functions. Need to configure methodNameResolver in        applicationContext.xml
+  1. #### AbstractController: nothing special
+  2. #### ParameerizableViewController: directly return a view without doing anything
+  3. #### UrlFilenameViewController: do some prefix and suffix to the request name and then return view
+  4. #### SimpleFormController: has onSubmit(Object command) function, command object contains form parameters. Remember need to                  configure commandClass in applicationContext.xml
+  5. #### MultiActionController: use request parameter "method" to map to different member functions. Need to configure                           methodNameResolver in applicationContext.xml
   
 ### ResourceViewResolver: 
   do some prefix and suffix to the view name so that it can map to the actual location of the view resource
 
 ### Transaction Management
   #### Programming style transaction management: Need to implement TransactionCallback interface
+   ```Java
   <bean class="org.springframework.transaction.support.TransactionTemplate" id="transactionTemplate">
   - <property name="transactionManager">
       <ref bean="transactionManager"/>
@@ -70,6 +71,7 @@ This is tutorial project of spring mvc and hibernate.
             }
         });
     }
+    ```
     
    #### Declaration style transaction manager: Uses spring AOP, need to create proxy object
    ```Java
@@ -88,7 +90,7 @@ This is tutorial project of spring mvc and hibernate.
   <property name="proxyTargetClass" value="true"/>
   <property name="transactionAttributes">
     <props>
-      <prop key="add*">PROPAGATION_REQUIRED</prop>
+      <prop key="add*">PROPAGATION_REQUIRED</prop> //Map function name begins with "add"
     </props>
   </property>
 </bean>
