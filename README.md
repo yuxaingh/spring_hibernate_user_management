@@ -72,7 +72,7 @@ This is tutorial project of spring mvc and hibernate.
         });
     }
     ```
-    
+   ***
    #### Declaration style transaction manager: Uses spring AOP, need to create proxy object
    ```Java
    <!-- 定义TransactionProxy -->
