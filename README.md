@@ -72,6 +72,7 @@ This is tutorial project of spring mvc and hibernate.
     }
     
    #### Declaration style transaction manager: Uses spring AOP, need to create proxy object
+   ```Java
    <!-- 定义TransactionProxy -->
   <bean class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" id="transactionProxy">
     <property name="transactionManager">
@@ -101,5 +102,6 @@ This is tutorial project of spring mvc and hibernate.
         user.setSex("Male");
         addDAO.addUser(user);//ִDo da operation
     }
+  ```
 
       
