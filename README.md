@@ -118,5 +118,13 @@ This is tutorial project of spring mvc and hibernate.
         addDAO.addUser(user);//ִDo da operation
     }
   ```
+  ## Hibernate Key Points
+  ```
+  1. Hibernate Configuration File
+  2. ORM class
+  3. ORM class mapping file (e.g. *hbm.xml)
+  4. First and second level cache
+  5. Lazy (e.g. session.load(...))
+  ```
 
       
