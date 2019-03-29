@@ -18,17 +18,17 @@ This is tutorial project of spring mvc and hibernate.
   1. AbstractController: nothing special
   2. ParameerizableViewController: directly return a view without doing anything
   3. UrlFilenameViewController: do some prefix and suffix to 
-  the request name and then return view
+     the request name and then return view
   4. SimpleFormController: has onSubmit(Object command) function, 
-  command object contains form parameters. Remember need to 
-  configure commandClass in applicationContext.xml
+     command object contains form parameters. Remember need to 
+     configure commandClass in applicationContext.xml
   5. MultiActionController: use request parameter "method" to map to different member functions.
-  Need to configure methodNameResolver in applicationContext.xml
+     Need to configure methodNameResolver in applicationContext.xml
   ```
   
 ### ResourceViewResolver:
 ```
-  do some prefix and suffix to the view name so that it can map to the actual location of the view resource
+  Do some prefix and suffix to the view name so that it can map to the actual location of the view resource
   ```
 
 ### Transaction Management
